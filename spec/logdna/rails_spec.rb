@@ -4,7 +4,7 @@ require 'webmock'
 
 describe LogDNA::RailsLogger do
   it 'has a version number' do
-    expect(LogDNA::RailsLogger::VERSION).not_to be nil
+    expect(LogDNA::Rails::VERSION).not_to be nil
   end
 
   valid_api_key = 'x' * 32
@@ -15,7 +15,7 @@ describe LogDNA::RailsLogger do
   end
 
   it 'posts data to the API endpoint' do
-    10.times { @logger.add(5, nil, 'test_app') { 'test_message' } } # 11th line triggers post from buffer
+    9.times { @logger.add(5, nil, 'test_app') { 'test_message' } } # 10th line triggers post from buffer
     res = @logger.add(5, nil, 'test_app') { 'test_message' }
     expect(res.code).to be 200
   end
@@ -45,7 +45,7 @@ describe LogDNA::RailsLogger do
   it 'posts data to the API endpoint after the http connection is reopened' do
     @logger.close_http
     @logger.reopen_http
-    10.times { @logger.add(5, nil, 'test_app') { 'test_message' } }
+    9.times { @logger.add(5, nil, 'test_app') { 'test_message' } }
     res = @logger.add(5, nil, 'test_app') { 'test_message' }
     expect(res.code).to be 200
   end

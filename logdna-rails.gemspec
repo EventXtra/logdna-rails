@@ -5,7 +5,7 @@ require 'logdna/rails/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'logdna-rails'
-  spec.version       = LogDNA::RailsLogger::VERSION
+  spec.version       = LogDNA::Rails::VERSION
   spec.author        = 'Edwin Lai'
   spec.email         = 'edwin@logdna.com'
 
