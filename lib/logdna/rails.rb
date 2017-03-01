@@ -1,5 +1,2 @@
-require 'http'
-require 'active_support/logger'
-require 'logdna'
 require_relative './rails/version'
 require_relative './rails_logger'

@@ -1,3 +1,7 @@
+require 'active_support/logger'
+require 'http'
+require 'logdna'
+
 module LogDNA
   class RailsLogger < ActiveSupport::Logger
     include LogDNA
